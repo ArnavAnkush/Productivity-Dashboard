@@ -19,3 +19,68 @@ function openPages() {
 }
 
 openPages();
+
+const form = document.querySelector(".addtask form");
+const taskInput = document.querySelector(".addtask form #task-input");
+const taskDetailsInput = document.querySelector(".addtask form textarea");
+const taskCheckbox = document.querySelector(".addtask form #check");
+
+function todoList() {
+  let currentTask = [];
+
+  if (localStorage.getItem("currentTask")) {
+    currentTask = JSON.parse(localStorage.getItem("currentTask"));
+  } else {
+    console.log("task list is empty");
+  }
+
+  function renderTask() {
+    const allTask = document.querySelector(".alltask");
+
+    let sum = " ";
+
+    currentTask.forEach(function (elem, idx) {
+      sum =
+        sum +
+        `<div class="task">
+              <details>
+                  <summary>
+                  <h5>
+      ${elem.task}
+      <span class='${elem.imp}'>imp</span>
+    </h5>
+  </summary>
+
+  <p class="task-details">${elem.details}</p>
+</details>
+
+<button id = ${idx}>Completed</button>
+            </div>`;
+    });
+
+    allTask.innerHTML = sum;
+    localStorage.setItem("currentTask", JSON.stringify(currentTask));
+
+    document.querySelectorAll(".task button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentTask.splice(btn.id, 1);
+        renderTask();
+      });
+    });
+  }
+  renderTask();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    currentTask.push({
+      task: taskInput.value,
+      details: taskDetailsInput.value,
+      imp: taskCheckbox.checked,
+    });
+    renderTask();
+    taskCheckbox.checked = false;
+    taskInput.value = " ";
+    taskDetailsInput.value = " ";
+  });
+}
+todoList();

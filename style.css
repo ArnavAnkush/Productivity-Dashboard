@@ -164,9 +164,6 @@ nav {
   scale: 0.95;
 }
 
-.todo-list-fullpage {
-  display: block;
-}
 .todo-list-fullpage h1 {
   font-size: 3.5vw;
   color: #f8f4e1;
@@ -191,7 +188,7 @@ nav {
   align-items: flex-start;
   padding: 1.5rem;
 }
-.todo-list-fullpage .todo-container .addtask form input {
+.todo-list-fullpage .todo-container .addtask form #task-input {
   padding: 0.5vw 1vw;
   width: 100%;
   font-size: 1.7rem;
@@ -247,7 +244,7 @@ nav {
 
 .task {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   background-color: #f8f4e1;
@@ -255,9 +252,28 @@ nav {
   border-radius: 1vw;
   margin-bottom: 1vw;
 }
+.task details {
+  flex: 1;
+}
 .task h5 {
   color: #381c0a;
   font-size: 2vw;
+  display: flex;
+  align-items: center;
+  gap: 0.25vw;
+}
+.task h5 span {
+  background-color: #e20118;
+  font-size: 0.7vw;
+  color: #f8f4e1;
+  padding: 4px 8px;
+  border-radius: 50px;
+}
+.task h5 span.true {
+  opacity: 1;
+}
+.task h5 span.false {
+  opacity: 0;
 }
 .task button {
   padding: 0.5vw 1vw;
@@ -276,4 +292,39 @@ nav {
 }
 .task button:active {
   scale: 0.95;
+}
+
+.mark-imp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5vw;
+  margin-bottom: 1vw;
+  width: 100%;
+  gap: 1.5vw;
+}
+.mark-imp input {
+  scale: 2;
+}
+.mark-imp label {
+  font-size: 1.5vw;
+}
+
+details {
+  width: 100%;
+}
+details p {
+  margin-top: 5vw;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.task-details {
+  margin-top: 1vw;
+  font-size: 1.2vw;
+  color: #381c0a;
+  margin-top: 0.8vw;
 }/*# sourceMappingURL=style.css.map */
