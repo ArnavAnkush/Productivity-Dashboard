@@ -1,0 +1,303 @@
+// Bg-Clor
+
+$pri: #381c0a;
+$drk-grn: #37ca9d;
+$lht-grn: #bff0db;
+$brown: #74512d;
+$org: #feba17;
+$bl: #7684ff;
+$vlt: #c2bff8;
+$red: #e20118;
+$pnk: #ff8be4;
+$btn-col: fcf8f5;
+$off-white: #dadada;
+
+// text-color
+$txt-dark: #000;
+$txt-light: #f8f4e1;
+
+@font-face {
+  font-family: aeonik;
+  font-weight: 200;
+  src: url(./assets/fonts/AeonikTRIAL-Light.otf);
+}
+@font-face {
+  font-family: aeonik;
+  font-weight: 500;
+  src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: aeonik;
+  font-weight: 200;
+  src: url(./assets/fonts/AeonikTRIAL-Bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: $pri;
+  color: $txt-dark;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  padding: 2vh;
+  font-family: aeonik;
+  color: $txt-light;
+}
+
+nav {
+  position: fixed;
+  width: 98%;
+  height: 8vh;
+  background-color: $drk-grn;
+}
+
+.img {
+  width: 100%;
+  height: 30vh;
+  background-color: $org;
+}
+
+.top {
+  width: 100%;
+  height: 30vh;
+  // background-color: $red;
+  display: flex;
+  justify-content: space-between;
+  .elem {
+    width: 31vw;
+    // background-color: red;
+    height: 100%;
+    border-radius: 1vw;
+  }
+}
+.bottom {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  .elem {
+    width: 47.5vw;
+    height: 100%;
+    border-radius: 1vw;
+  }
+}
+
+.elem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  position: relative;
+
+  .glass {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.094);
+    backdrop-filter: blur(10px) brightness(110%) saturate(110%);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 4rem;
+      font-weight: 500;
+      color: $txt-light;
+    }
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.todo {
+  background-image: url(https://plus.unsplash.com/premium_photo-1673032234339-47dc86067bda?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE3fHxncmFkaWVudHxlbnwwfHwwfHx8MA%3D%3D);
+  background-size: cover;
+}
+
+.daily {
+  background-image: url(https://images.unsplash.com/photo-1655998233171-ee5b130acba5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHxncmFkaWVudHxlbnwwfHwwfHx8MA%3D%3D);
+
+  background-size: cover;
+  background-position: center;
+}
+
+.moti {
+  background-image: url(https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGdyYWRpZW50fGVufDB8fDB8fHww);
+  background-size: cover;
+  background-position: center;
+}
+
+.pomo {
+  background-image: url(https://images.unsplash.com/photo-1649861742672-20152f77c1f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGdyYWRpZW50fGVufDB8fDB8fHww);
+  background-size: cover;
+}
+
+.goals {
+  background-image: url(https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px) brightness(110%) saturate(105%);
+}
+
+.fullelem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  z-index: 999;
+  background-color: $pri;
+  padding: 2vw;
+}
+
+.back {
+  position: absolute;
+  right: 5%;
+
+  background-color: $red;
+  padding: 1vw;
+  color: $txt-light;
+  border-radius: 1vw;
+  cursor: pointer;
+  font-size: 1.5vw;
+  transition: all ease 0.3s;
+  &:hover {
+    color: $pri;
+    scale: 1.05;
+  }
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.todo-list-fullpage {
+  h1 {
+    font-size: 3.5vw;
+    color: $txt-light;
+  }
+  display: block;
+  .todo-container {
+    width: 100%;
+    height: 85%;
+    margin-top: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .addtask {
+      width: 35%;
+      height: 100%;
+      background-color: $brown;
+      border-radius: 1vw;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        input {
+          padding: 0.5vw 1vw;
+          width: 100%;
+          font-size: 1.7rem;
+          background-color: $txt-light;
+          border: none;
+          outline: none;
+          color: $pri;
+          margin-bottom: 20px;
+          border-radius: 0.5vw;
+        }
+        textarea {
+          padding: 0.5vw 1vw;
+          width: 100%;
+          font-size: 1.7rem;
+          background-color: $txt-light;
+          border: none;
+          outline: none;
+          color: $pri;
+          margin-bottom: 20px;
+          border-radius: 0.5vw;
+        }
+        button {
+          padding: 0.5vw 1vw;
+          width: 100%;
+          font-size: 1.7rem;
+          background-color: $org;
+          border: none;
+          outline: none;
+          color: $txt-light;
+          margin-bottom: 20px;
+          border-radius: 0.5vw;
+          transition: all ease 0.3s;
+          cursor: pointer;
+          &:active {
+            scale: 0.95;
+          }
+          &:hover {
+            color: $pri;
+            scale: 1.05;
+          }
+        }
+      }
+    }
+    .alltask {
+      width: 60%;
+      height: 100%;
+      background-color: $brown;
+      border-radius: 1vw;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.6vw;
+      overflow: auto;
+    }
+  }
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $txt-light;
+  padding: 2vw 3vw;
+  border-radius: 1vw;
+  margin-bottom: 1vw;
+
+  h5 {
+    color: $pri;
+    font-size: 2vw;
+  }
+  button {
+    padding: 0.5vw 1vw;
+    color: $txt-light;
+    background-color: green;
+    border-radius: 0.5vw;
+    border: none;
+    font-size: 1vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    &:hover {
+      color: $pri;
+      scale: 1.05;
+    }
+    &:active {
+      scale: 0.95;
+    }
+  }
+}
