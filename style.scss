@@ -169,7 +169,7 @@ nav {
 .back {
   position: absolute;
   right: 5%;
-
+  border: none;
   background-color: $red;
   padding: 1vw;
   color: $txt-light;
@@ -354,4 +354,73 @@ summary {
   font-size: 1.2vw;
   color: $pri;
   margin-top: 0.8vw;
+}
+
+.daily-planner-fullpage {
+  .heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 85%;
+    h1 {
+      font-size: 4vw;
+    }
+    .reset {
+      background-color: $org;
+      padding: 1vw;
+      color: $txt-light;
+      border-radius: 1vw;
+      cursor: pointer;
+      font-size: 1.5vw;
+      transition: all ease 0.3s;
+      border: none;
+      &:hover {
+        color: $pri;
+        scale: 1.05;
+      }
+      &:active {
+        scale: 0.95;
+      }
+    }
+  }
+  .day-planner {
+    background-color: $brown;
+    height: 85%;
+    margin-top: 3vw;
+    width: 100%;
+    border-radius: 1vw;
+    padding: 2.5vw;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .day-planner-time {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: 1.5vw;
+      width: 49%;
+      p {
+        position: absolute;
+        top: 10%;
+        left: 2%;
+        font-size: 1.8vw;
+        color: $txt-light;
+      }
+
+      input {
+        padding: 1vw 3.5vw;
+        width: 100%;
+        background-color: $pri;
+        border-radius: 0.5vw;
+        border: none;
+        font-size: 2.5vw;
+        padding-top: 3vw;
+        color: $org;
+        outline: none;
+      }
+    }
+  }
 }
