@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: aeonik;
-  font-weight: 200;
+  font-weight: 700;
   src: url(./assets/fonts/AeonikTRIAL-Bold.otf);
 }
 * {
@@ -135,8 +135,7 @@ nav {
 
 .fullelem {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   height: 100vh;
   width: 100vw;
   display: none;
@@ -315,7 +314,7 @@ details {
   width: 100%;
 }
 details p {
-  margin-top: 5vw;
+  margin-top: 0.8vw;
 }
 
 summary {
@@ -393,4 +392,78 @@ summary {
   padding-top: 3vw;
   color: #feba17;
   outline: none;
+}
+
+.motivation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 34vw;
+  width: 80%;
+  border-radius: 2.5vw;
+}
+.motivation-container::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #feba17;
+  border-radius: 2.5vw;
+  scale: 1.15;
+  z-index: 8;
+  filter: blur(70px);
+}
+.motivation-container .motivation-wrapper {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  background-color: #feba17;
+  border-radius: 2vw;
+  padding: 1.3vw;
+}
+
+.motivation-1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.5vw;
+}
+.motivation-1 h2 {
+  background-color: #74512d;
+  font-size: 2.5vw;
+  font-weight: 500;
+  text-align: right;
+  padding: 1.5vw;
+  border-radius: 1vw;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.motivation-2 {
+  padding: 0.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+.motivation-2 h1 {
+  font-size: 4vw;
+  font-weight: 700;
+  color: #381c0a;
+}
+
+.motivation-3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1.5vw;
+}
+.motivation-3 h2 {
+  background-color: #74512d;
+  font-size: 2.5vw;
+  font-weight: 500;
+  text-align: right;
+  padding: 1.5vw;
+  border-radius: 1vw;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=style.css.map */
